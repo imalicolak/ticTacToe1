@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --orange: #F2C14E;
+    --winning-blocks: #2d414b;
+} 
+/* root are variables for color */
+body{
+    color: var(--orange);
+    font-family: 'Oswald', bold;
+}
+h1{
+    font-size: 54px;
+    text-transform: uppercase;
+}
+.container{
+    padding: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #37505c;
+}
+#gameBoard{
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+}
+.box{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    font-size: 120px;
+    border-right: 5px solid; 
+    border-bottom: 5px solid;
+    /* the border-right and border-bottom set the borders of the box. therefore the next statements remove them */
+}
+.box:nth-child(3n){
+    /* for each 3rd border child, it's going to remove it */
+    border-right: none;
+}
+.box:nth-child(6) ~ .box{
+    /* count six divs, remove border bottom for everything else */
+    border-bottom: none;
+}
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--orange);
+    color: #333;
+    border-color: var(--orange);
+    font-size: 18px;
+    transition: 200ms transform;
+     
+}
+button:hover{
+    cursor: pointer;
+    transform: translateY(-1px);
+}
